@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover navgationbar and Responsive</title>
+    <!-- =====Internal CSS========== -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100vh;
+            background-image: url(https://img.freepik.com/free-photo/mythical-dragon-beast-anime-style_23-2151112835.jpg?t=st=1724772368~exp=1724775968~hmac=ac48dabe1e2c7620a4d803ec2e4766ca9bbafd4ccedd595a5487644c869cf2a5?uid=R111686738&ga=GA1.1.630928424.1709967034);
+            background-size: cover;
+            background-repeat: no-repeat;
+            /* background-position: center; */
+            font-family: sans-serif;
+        }
+        & nav{
+            background-color: rgb(53, 53, 53);
+            box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+            & ul{
+                width: 100%;
+                list-style: none;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                & li{
+                    height: 50px;
+                    & a{
+                        height: 100%;
+                        padding: 0 30px;
+                        text-decoration: none;
+                        display: flex;
+                        align-items: center;
+                        color: whitesmoke;
+                    }
+                }
+            }
+
+        }
+        & nav a:hover{
+            background-color: #3d3d3d;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- nav -->
+   <nav>
+    <ul>
+        <li><a href="#">Mr.Jaison</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Form</a></li>
+        <li><a href="#">Login</a></li>
+    </ul>
+   </nav>
+</body>
+</html>

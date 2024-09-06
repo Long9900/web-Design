@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>using a ::before element and ::after element</title>
+    <style>
+        :root{
+            --primary-color:#41295a;
+            --secedary-color:#2F0743;
+        }
+        html{
+            font-family: poppins,sans-serif;
+        }
+        body{
+            /* background-color: rgb(41, 40, 40); */
+            background:linear-gradient( to right,#41295a,#2F0743);
+        }
+        & h1{
+            position: relative;
+            width:max-content;
+            color: whitesmoke;
+        }
+        & h1:hover::after{
+            width: 0;
+        }
+        & h1::after{
+            content: '';
+            background:linear-gradient(to right,red,blue);
+            width: 100%;
+            height: 4px;
+            position:absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 100px;
+            transition: 1s;
+        }
+        .Animaton{
+            width: 30px;
+            height: 30px;
+            border: 2px solid aqua;
+            border-radius: 4px;
+            box-shadow:  0 0 8px aqua,0 0 8px aqua inset;
+            top: 50%;
+            left: 50%;
+            translate: 50% 50%;
+            z-index: 10;
+            animation: 2s Animaton ease-in-out infinite;
+            background-image: url(https://img.freepik.com/free-photo/take-me-home-welsh-corgi-pembroke-puppy-is-posing-cute-fluffy-doggy-pet-is-sitting-isolated-red-background-studio-photoshot-negative-space-insert-your-text-image_155003-34632.jpg?uid=R111686738&ga=GA1.1.630928424.1709967034&semt=ais_hybrid);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            border: 5px solid aqua;
+            border-radius: 4px;
+            top: 5%;
+            left: 5%;
+            translate: 50% 50%;
+            z-index: 5;
+            animation: 3s box ease-in-out infinite;
+            margin: auto;
+        }
+        .boxx{
+            width: 20px;
+            height: 20px;
+            border: 2px solid azure;
+            border-radius: 4px;
+            box-shadow:  0 0 1px aqua,0 0 1px aqua inset;
+            top: 5%;
+            left: 5%;
+            translate: 50% 50%;
+            z-index: 1;
+            animation: 3s boxx ease-in-out infinite;
+            margin-left: 100px;
+        }
+        /* Animation */
+        @keyframes Animaton{
+            0%{
+                transform: rotateX(0) rotateY(0) rotateZ(0);
+            }
+            33%{
+                transform: rotateX(180deg) rotateY(0) rotateZ(0);
+            }
+            67%{
+                transform: rotateX(180deg) rotateY(180deg) rotateZ(0);
+            }
+            100%{
+                transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+            }
+        }
+        /* box */
+        @keyframes box {
+             0% {
+                transform: scale(0) translateY(-90px) rotate(360deg);
+                opacity: 1;
+            }
+  
+            100% {
+                transform: scale(1.3) translateY(-90px) rotate(-180deg);
+                border-radius: 50%;
+                opacity: 0;
+            }
+        
+        }
+        /* boxx */
+        @keyframes boxx {
+             100% {
+                transform: scale(1.3) translateY(90px) rotate(360deg);
+                opacity: 0;
+            }
+  
+            0% {
+                transform: scale(1.1) translateY(-90px) rotate(180deg);
+                border-radius: 20%;
+                opacity: 1;
+                backgroun:linear-gradient(to right,red,blue);
+            }
+        
+        }
+    </style>
+</head>
+<body>
+    <h1>My Element</h1>
+    <!-- ===Animaton====== -->
+    <div class="Animaton"></div>
+    <div class="box"></div>
+    <div class="boxx"></div>
+    <!-- ======
+    pseudo-elements
+    :: before element
+    :: after element
+    ========== -->
+</body>
+</html>
